@@ -38,7 +38,7 @@ There are four deliverables: a script called **earnings.py** that will request d
 
 1. Now create a trimmed-down dataframe for joining onto the shape file by setting `trim` equal to a dataframe consisting of just the `"GEOID"` and `"median"` columns of `earnings`.
 
-1. Next, use the `geopandas.read_file()` function to read the New York county shapefile. Put the data into a variable called `geodata`.
+1. Next, use the GeoPandas `gpd.read_file()` function to read the New York county shapefile. Put the data into a variable called `geodata`.
 
 1. Set `geodata` to the result of using a left 1:1 join to merge `trim` onto `geodata` using `on="GEOID"` and with `indicator` set to `True`.
 

@@ -8,7 +8,7 @@ and the CSV file population.csv from the course Google Drive.
 """
 
 import pandas as pd
-import geopandas
+import geopandas as gpd
 import matplotlib.pyplot as plt
 
 #%%
@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 #  Read the shapefile and set the index to the state PO code
 #
 
-states = geopandas.read_file("cb_2019_us_state_500k.zip")
+states = gpd.read_file("cb_2019_us_state_500k.zip")
 
 states = states.set_index('STUSPS',drop=False)
 
