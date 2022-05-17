@@ -33,6 +33,6 @@ makefile
 *.pkl
 *.zip
 
-! earnings_map.qgz
-! earnings_map.png
-! earnings_hist.png
+!earnings_map.qgz
+!earnings_map.png
+!earnings_hist.png
