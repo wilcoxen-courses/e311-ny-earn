@@ -6,11 +6,11 @@ This exercise combines use of the Census API with use of the geopandas module an
 
 ## Input Data
 
-The only input file is **cb_2019_us_county_500k_36.zip**, a shapefile of New York counties that can be obtained from the previous assignment or the Google Drive folder for this exercise. The remaining data will be obtained from the Census via its API. However, if you'd like to run the demo script, which is highly recommended, you'll need two other files from the Google Drive folder: **cb_2019_us_state_500k.zip**, a shapefile of state boundaries, and **population.csv**, a file of population data downloaded from the Census API server.
+The only input file is **cb_2019_us_county_500k.zip**, a shapefile of US counties that can be obtained from one of the earlier assignments or the Google Drive folder for this exercise. The remaining data will be obtained from the Census via its API. However, if you'd like to run the demo script, which is highly recommended, you'll need two other files from the Google Drive folder: **cb_2019_us_state_500k.zip**, a shapefile of state boundaries, and **population.csv**, a file of population data downloaded from the Census API server.
 
 ## Deliverables
 
-There are four deliverables: a script called **earnings.py** that will request data from the Census API, join the data to the county shapefile, save a histogram in a file called **earnings_hist.png**, and then write out the result as a geopackage file; a QGIS project file called **earnings_map.qgz**; and a PNG file called **earnings_map.png** that will be a heat map of median earnings.
+There are five deliverables: a script called **earnings.py** that will request data from the Census, save a histogram of it in **earnings_hist.png**, and join it to a set of county polygons for New York counties, and write out the result as a geopackage file called **counties.gpkg**; a QGIS project file called **earnings_map.qgz**; and a PNG file called **earnings_map.png** that will be a heat map of median earnings.
 
 ## Instructions
 
@@ -38,13 +38,15 @@ There are four deliverables: a script called **earnings.py** that will request d
 
 1. Now create a trimmed-down dataframe for joining onto the shape file by setting `trim` equal to a dataframe consisting of just the `"GEOID"` and `"median"` columns of `earnings`.
 
-1. Next, use the GeoPandas `gpd.read_file()` function to read the New York county shapefile. Put the data into a variable called `geodata`.
+1. Next, use the GeoPandas `gpd.read_file()` function to read the US county shapefile. Put the data into a variable called `geodata`.
 
-1. Set `geodata` to the result of using a left 1:1 join to merge `trim` onto `geodata` using `on="GEOID"` and with `indicator` set to `True`.
+1. Filter `geodata` down to New York counties by setting `geodata` equal to the result of applying the `.query()` method to it with an appropriate string for selecting records where the `"STATEFP"` field is `"36"`.
+
+1. Now merge on the Census data by setting `geodata` to the result of using a left 1:1 join to merge `trim` onto `geodata` using `on="GEOID"` and with `indicator` set to `True`.
 
 1. Print the value counts for the `"_merge"` column of `geodata` to verify that all 62 counties matched, and then drop the column.
 
-1. Write out `geodata` to a geopackage file called `"counties.gpkg"`. Set the layer to `"earnings"` and also discard the index by including the argument `index=False` (avoids a warning message about future changes in Pandas).
+1. Write out `geodata` to a geopackage file called `"counties.gpkg"`. Set the layer to `"earnings"`.
 
 ### B. Files earnings_map.qgz and earnings_map.png
 

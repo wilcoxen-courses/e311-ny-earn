@@ -33,6 +33,7 @@ makefile
 *.pkl
 *.zip
 
+!counties.gpkg
 !earnings_map.qgz
 !earnings_map.png
 !earnings_hist.png
