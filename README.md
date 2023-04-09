@@ -54,7 +54,7 @@ There are five deliverables: a script called **earnings.py** that will request d
 
 1. Then, build a heat map of the median earnings using "natural breaks" with 5 classes. The natural breaks mode does a pretty good job of dividing the counties into groups that a person might pick looking at the histogram: a very low group, two middle groups, a high group, and a very high group having just one member. You can choose the color ramp but keep in mind that the map will be easiest to interpret if low income areas are light to signal less of the variable being shown and high income areas are dark to signal more.
 
-1. Label the counties using the medians. Set the point size to 7, turn on text buffers, and check the "Show all labels" box (on the brush tab).
+1. Label the counties using the medians. Set the point size to 7, turn on text buffers, and choose the mode "Allow Overlaps if Required" in the Overlapping Labels section of the label Rendering tab (a small paintbrush).
 
 1. Still adjusting the labels, go to the formatting tab (the one with "+ab" as part of its icon) and check "Formatted numbers" and set decimal places to 0.
 
