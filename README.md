@@ -30,7 +30,7 @@ There are five deliverables: a script called **earnings.py** that will request d
 
 1. Draw a histogram of median earnings by calling `sns.histplot()` with the arguments `data=earnings`, `x="median"`, `stat="density"`, and `ax=ax1`. The `stat` keyword indicates that the Y axis of the histogram should be the probability density.
 
-1. Add a kernel density estimate to the figure by calling `sns.kdeplot()` with the arguments `data=earnings`, `x="median"`, `shade=True`, and `ax=ax1`. The `shade` option causes the area below the curve to be shaded.
+1. Add a kernel density estimate to the figure by calling `sns.kdeplot()` with the arguments `data=earnings`, `x="median"`, `fill=True`, and `ax=ax1`. The `fill` option causes the area below the curve to be filled in with light shading.
 
 1. Set the X axis label to `"Median Income in Thousands"`.
 
