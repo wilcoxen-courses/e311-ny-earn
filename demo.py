@@ -3,13 +3,15 @@ demo.py
 Spring 2022 PJW
 
 Demonstrate using geopandas for joining data onto a shapefile. To use
-this script, download the Census shapefile cb_2019_us_state_500k.zip 
+this script, download the Census shapefile cb_2019_us_state_500k.zip
 and the CSV file population.csv from the course Google Drive.
 """
 
 import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt
+
+plt.rcParams['figure.dpi'] = 300
 
 #%%
 #
@@ -120,7 +122,7 @@ conus = conus.set_index('STUSPS')
 #%%
 #
 #  Write it out as a geopackage file. Put the data into a layer
-#  called states. Dis
+#  called states.
 #
 
 conus.to_file("conus.gpkg",layer="states")
@@ -139,3 +141,12 @@ near_wv.plot('NAME',cmap='Dark2')
 
 near_wv.to_file("conus.gpkg",layer="near_wv")
 
+#%%
+#
+#  Draw a more elaborate heatmap based on population
+#
+
+fig,ax = plt.subplots(figsize=(8,3))
+fig.suptitle('State Population in Millions')
+near_wv.plot("mil",cmap='Blues',legend=True,ax=ax)
+fig.tight_layout()
