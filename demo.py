@@ -69,9 +69,9 @@ print( wv_geo )
 
 sel = conus.loc[['CA','OR','WA']]
 
-fig, ax1 = plt.subplots(dpi=300)
+fig,ax = plt.subplots(dpi=300)
 
-sel.plot('NAME',cmap='Dark2',ax=ax1)
+sel.plot('NAME',cmap='Dark2',ax=ax)
 
 fig.tight_layout()
 fig.savefig('west_coast.png')

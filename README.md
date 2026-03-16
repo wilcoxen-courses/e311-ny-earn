@@ -26,11 +26,11 @@ There are five deliverables: a script called **earnings.py** that will request d
 
 1. Use the `to_csv()` method of `earnings` to write the data to `'earnings.csv'`. Use `index=False` because the index is just row numbers and does not need to be saved.
 
-1. Use `fig, ax1 = plt.subplots()` to create a new single-panel figure as in previous exercises. Use the `dpi` keyword to set the resolution to 300.
+1. Use `fig, ax = plt.subplots()` to create a new single-panel figure as in previous exercises. Use the `dpi` keyword to set the resolution to 300.
 
-1. Draw a histogram of median earnings by calling `sns.histplot()` with the arguments `data=earnings`, `x="median"`, `stat="density"`, and `ax=ax1`. The `stat` keyword indicates that the Y axis of the histogram should be the probability density.
+1. Draw a histogram of median earnings by calling `sns.histplot()` with the arguments `data=earnings`, `x="median"`, `stat="density"`, and `ax=ax`. The `stat` keyword indicates that the Y axis of the histogram should be the probability density.
 
-1. Add a kernel density estimate to the figure by calling `sns.kdeplot()` with the arguments `data=earnings`, `x="median"`, `fill=True`, and `ax=ax1`. The `fill` option causes the area below the curve to be filled in with light shading.
+1. Add a kernel density estimate to the figure by calling `sns.kdeplot()` with the arguments `data=earnings`, `x="median"`, `fill=True`, and `ax=ax`. The `fill` option causes the area below the curve to be filled in with light shading.
 
 1. Set the X axis label to `"Median Income in Thousands"`.
 
