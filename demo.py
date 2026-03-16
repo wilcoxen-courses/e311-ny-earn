@@ -3,7 +3,7 @@ demo.py
 Spring 2022 PJW
 
 Demonstrate using geopandas for joining data onto a shapefile. To use
-this script, download the Census shapefile cb_2019_us_state_500k.zip
+this script, download the Census shapefile cb_2024_us_state_500k.zip
 and the CSV file population.csv from the course Google Drive.
 """
 
@@ -18,7 +18,7 @@ plt.rcParams['figure.dpi'] = 300
 #  Read the shapefile and set the index to the state PO code
 #
 
-states = gpd.read_file("cb_2019_us_state_500k.zip")
+states = gpd.read_file("cb_2024_us_state_500k.zip")
 
 states = states.set_index('STUSPS',drop=False)
 

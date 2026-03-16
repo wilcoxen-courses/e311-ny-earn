@@ -6,7 +6,7 @@ This exercise combines use of the Census API with use of the geopandas module an
 
 ## Input Data
 
-The only input file is **cb_2019_us_county_500k.zip**, a shapefile of US counties that can be obtained from one of the earlier assignments or the Google Drive folder for this exercise. The remaining data will be obtained from the Census via its API. However, if you'd like to run the demo script, which is highly recommended, you'll need two other files from the Google Drive folder: **cb_2019_us_state_500k.zip**, a shapefile of state boundaries, and **population.csv**, a file of population data downloaded from the Census API server.
+The only input file is **cb_2024_us_county_500k.zip**, a shapefile of US counties that can be obtained from one of the earlier assignments or the Google Drive folder for this exercise. The remaining data will be obtained from the Census via its API. However, if you'd like to run the demo script, which is highly recommended, you'll need two other files from the Google Drive folder: **cb_2024_us_state_500k.zip**, a shapefile of state boundaries, and **population.csv**, a file of population data downloaded from the Census API server.
 
 ## Deliverables
 
