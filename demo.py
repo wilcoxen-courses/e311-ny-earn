@@ -111,7 +111,7 @@ trim = pop[sel_vars]
 conus = conus.merge(trim,on='STATEFP',how='left',validate='1:1',indicator=True)
 
 print( conus['_merge'].value_counts() )
-conus.drop(columns='_merge',inplace=True)
+conus = conus.drop(columns='_merge')
 
 #
 #  The index is discarded during the merge, so reset it
